@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>RaDiO LaTiDo MusiCal - La mejor música en vivo</title>
+    <meta name="description"
+        content="RaDiO LaTiDo MusiCal es tu estación de radio en línea para la mejor música. Sintonízanos para disfrutar de los mejores éxitos musicales, las últimas noticias y contenido de calidad.">
+    <meta name="keywords"
+        content="Radio, Música, Latido, Musical, Entretenimiento, Cultura, En vivo, Noticias, Éxitos musicales">
+    <meta name="author" content="RaDiO LaTiDo MusiCal">
+    <meta http-equiv="pragma" content="no-cache">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <link rel="stylesheet" href="./css/styles.css">
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            position: relative;
+            background-color: #050505;
+            margin: auto;
+            padding: 0;
+            max-width: 510px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+            animation-name: animatetop;
+            animation-duration: 0.4s;
+        }
+
+        @keyframes animatetop {
+            from {top: -300px; opacity: 0}
+            to {top: 0; opacity: 1}
+        }
+
+        .close {
+            color: white;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #dd0808;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-header {
+            padding: 2px 16px;
+            background-color: #5cb85c;
+            color: white;
+        }
+
+        .modal-body {
+            padding: 2px 16px;
+        }
+
+        .responsive {
+            width: 100%;
+            height: auto;
+        }
+    @media only screen and (max-width: 600px) {
+    body {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    }
+    .logo{
+    width: 312px;
+    height: auto;
+    }
+    }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="nav">
+            <div id="logodiv"><img id="logo" src="./images/logo2.png" alt=""></div>
+            <div class="barra">
+                <nav>
+                    <ul>
+                        <li><a href="https://latidomusical.powerfriends.net">Inicio</a></li>
+                        <li><a target="_blank" href="https://latidomusical.powerfriends.net/normas/">Normas</a></li>
+                        <li><a target="_blank" href="https://latidomusical.powerfriends.net/horarios/">Horario</a></li>
+
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+        </div>
+    </header>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">X</span>
+            <img src="./images/baner.jpg" alt="Imagen" class="responsive">
+        </div>
+    </div>
+
+    <br>
+    <div class="main">
+        <div class="column">
+
+
+            <!-- Contenido de la primera columna 
+            <span><iframe src="https://server.streamcasthd.com/cp/widgets/player/single/?p=8196" height="110" width="100%" scrolling="no" style="border:none;"></iframe></span>
+                -->
+
+            <ul>
+
+                <li id="miAudio" style="background-color: #232323; color: white; padding: 20px; font-size: 16px;">
+                    <button id="playButton" style="background-color: rgb(10, 10, 10); color: rgb(138, 137, 137)"><i
+                            class="fa fa-play"></i></button>
+                    <button id="pauseButton" style="background-color: rgb(0, 0, 0); color: rgb(138, 137, 137);"><i
+                            class="fa fa-pause"></i></button>
+                    <input id="volumeControl" type="range" min="0" max="1" step="0.01"
+                        style="width: 100px; margin-left: 30px;">
+                    <audio id="audio" style="display: none;">
+                        <source src="https://server.streamcasthd.com/8196/stream" type="audio/mpeg">
+                        Tu navegador no soporta la etiqueta de audio.
+                    </audio>
+                <li class="app">Bajate nuestra <a target="_blank"
+                        href="https://play.google.com/store/apps/details?id=laradio.online.radiolatidomusicalok">APP</a>
+                </li>
+                </li>
+
+                <li style="background-color: crimson"><span>Dj: </span>
+                    <div id='sonic_dj'></div>
+                </li>
+                <li><span>Oyentes: </span>
+                    <div id='sonic_listeners'></div>
+                </li>
+                <li style="background-color: #cc4711; opacity: 90%;">Canción: <div id='sonic_title'></div>
+                </li>
+
+            </ul>
+
+
+
+
+        </div>
+        <div class="column">
+            <!-- Contenido de la segunda columna -->
+            <p><span style="color:chocolate;font-style: italic;font-size: 32px;min-width: 500px;">W</span>ebchat</p>
+            <span>
+                <iframe width="450px" height="300" scrolling="no"
+                    src="https://widget.mibbit.com/?settings=803ecd906a551e5f557be957f623b47a&server=irc.chathispano.com&channel=%23radio-latido-musical"></iframe>
+            </span>
+        </div>
+        <div class="column" style="font-size: 11px; max-width: 540px;">
+            <!-- Contenido de la tercera columna -->
+            <div id="title_history">
+                <p>Historial de temas</p>
+            </div>
+            <div class="scroll">
+                <ul class="songs" style="font-size: 16px;height: 300px" class="scroll">
+                    <li id="history"></li>
+                </ul>
+            </div>
+            <div class="links">
+                <ul>
+                    <li>
+                        <div style="display:flex;gap: 7px;"><span class="redes">DJ's</span><span
+                                class="redes">Especiales</span><span class="redes">Karaokes</span></div>
+                    </li>
+
+                </ul>
+            </div>
+
+
+        </div>
+
+    </div>
+    <footer
+        style="display:flex;align-items: center; justify-content: center; width: 100%; height: 120px; background-color: #131313;">
+        <div>
+            <p>&copy; 2023</p>
+        </div>
+        <div><img id="logo" src="./images/logo2.png" alt=""></div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- Asegúrate de tener esto en tu HTML para cargar Font Awesome -->
+
+    <script src="script.js"></script>
+    <script id='sonic_js' data-port='8196' src='https://server.streamcasthd.com/cp/widgets.js?r=688'></script>
+    <script>
+        var audio = document.getElementById('audio');
+        var playButton = document.getElementById('playButton');
+        var pauseButton = document.getElementById('pauseButton');
+        var volumeControl = document.getElementById('volumeControl');
+
+        playButton.addEventListener('click', function () {
+            audio.play();
+        });
+
+        pauseButton.addEventListener('click', function () {
+            audio.pause();
+        });
+
+        volumeControl.addEventListener('input', function () {
+            audio.volume = volumeControl.value;
+        });
+    </script>
+    <script>
+
+        // Obtén los botones por su ID
+        var boton1 = document.getElementById("playButton");
+        var boton2 = document.getElementById("pauseButton");
+
+        // Añade un evento de clic al primer botón
+        boton1.addEventListener("click", function () {
+            // Cambia el color del segundo botón cuando se hace clic en el primer botón
+            boton1.style.backgroundColor = "red";
+            boton2.style.backgroundColor = "black";
+        });
+
+        boton2.addEventListener("click", function () {
+            // Cambia el color del segundo botón cuando se hace clic en el primer botón
+            boton2.style.backgroundColor = "red";
+            boton1.style.backgroundColor = "black";
+        });
+
+    </script>
+    <script>
+        function fetchData() {
+            fetch('https://server.streamcasthd.com/cp/get_info.php?p=8196')
+                .then(response => response.json())
+                .then(data => {
+                    var history = data.history;
+                    var historyDiv = document.getElementById('history');
+                    historyDiv.innerHTML = '';
+
+                    for (var i = 0; i < history.length; i++) {
+                        var p = document.createElement('li');
+                        // Asignar una clase al div
+
+                        p.innerHTML = history[i].replace(/<br>/g, '').replace(/^[0-9]+\./, '').replace(/\)/g, '');
+                        historyDiv.appendChild(p);
+                    }
+                });
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        fetchData();
+        setInterval(fetchData, 30000);
+    </script>
+
+    <script>
+        // Obtén la ventana modal
+        var modal = document.getElementById("myModal");
+
+        // Obtén el elemento que cierra la ventana modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // Cuando la página se carga, abre la ventana modal 
+        window.onload = function () {
+            modal.style.display = "block";
+        }
+
+        // Cuando el usuario hace clic en el botón (x), cierra la ventana modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // Cuando el usuario hace clic en cualquier lugar fuera de la ventana modal, ciérrala
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
