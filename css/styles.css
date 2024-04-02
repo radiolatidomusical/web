@@ -225,7 +225,7 @@ li {
     margin-bottom: 4px;
     border-radius: 7px; /* Radio de borde superior izquierdo */
     font-weight: 800;
-    width= 318px;
+    width: 318px;
     
 }
 #history{
@@ -234,6 +234,8 @@ li {
     font-size: 16px;
     font-weight: 500;
     text-align: centlefter;
+    width: 318px;
+
     
 }  
 
