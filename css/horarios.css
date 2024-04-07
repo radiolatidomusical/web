@@ -87,16 +87,14 @@ table tr:hover {
     max-width: 130px;
 }
 
-h3 {
+.title {
   color: rgb(255, 255, 255);
   font-size: 74px;
   text-align: center;
-  padding: 9px;
   font-family: "Bowlby One SC";
-  font-stretch: extracondensed;
   font-style: italic;
   letter-spacing: 0.3625em;
-  text-shadow: 3px 2px 6px rgb(19, 13, 6);
+  text-shadow: 3px 2px 6px rgb(94, 93, 93);
 }
 
 #logo {
@@ -108,6 +106,7 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 0px;
 
 }
 
@@ -120,7 +119,7 @@ h3 {
 
 
 @media screen and (max-width: 340px) {
-    h3{
+    .title{
         font-size: 33px;}
   #logo {
     width: 300px;
