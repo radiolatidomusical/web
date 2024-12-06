@@ -97,54 +97,58 @@
             <div class="barra">
                 <nav>
                     <ul>
-                        <li><a href="https://radiolatidomusical.github.io/web/">Inicio</a></li>
-                        <li><a target="_blank" href="#/normas/">Normas</a></li>
-                        <li><a target="_blank" href="https://radiolatidomusical.github.io/web/horario.html">Horario</a></li>
+                        <li><a href="https://latidomusical.powerfriends.net">Inicio</a></li>
+                        <li><a target="_blank" href="https://latidomusical.powerfriends.net/normas/">Normas</a></li>
+                        <li><a target="_blank" href="https://latidomusical.powerfriends.net/horarios/">Horario</a></li>
 
                     </ul>
                 </nav>
-                <span></span>
             </div>
 
         </div>
         </div>
     </header>
- 
-
+   <!-- <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">X</span>
+            <img src="./images/baner.jpg" alt="Imagen" class="responsive">
+        </div>
+    </div>
+-->
     <br>
     <div class="main">
         <div class="column">
 
 
             <!-- Contenido de la primera columna 
-            <span><iframe src="https://server.streamcasthd.com/cp/widgets/player/single/?p=8196" height="110" width="100%" scrolling="no" style="border:none;"></iframe></span>
+            <span><iframe src="https://server.streamcasthd.com/cp/widgets/player/single/?p=8630" height="110" width="100%" scrolling="no" style="border:none;"></iframe></span>
                 -->
 
             <ul>
 
                 <li id="miAudio" style="background-color: #232323; color: white; padding: 20px; font-size: 16px;">
-                    <iframe name="contenedorPlayer" class="cuadroBordeado" allow="autoplay" width="250px" height="40px" marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no  src="https://cp.usastreams.com/pr2g/APPlayerRadioHTML5.aspx?stream=https://radio02.ferozo.com/proxy/ra02001575?mp=/stream&fondo=05&formato=mp3&color=14&titulo=2&autoStart=1&vol=5&tipo=1&nombre=Radio+Latido+Musical"></iframe>
-<!-- En players responsive puede modificar el weight a sus necesidades, Por favor no modifique el resto del codigo para poder seguir ofreciendo este servicio gratis  -->
-<!-- Fin. USAstreams.com html5 player -->
-               
+                    <button id="playButton" style="background-color: rgb(10, 10, 10); color: rgb(138, 137, 137)"><i
+                            class="fa fa-play"></i></button>
+                    <button id="pauseButton" style="background-color: rgb(0, 0, 0); color: rgb(138, 137, 137);"><i
+                            class="fa fa-pause"></i></button>
+                    <input id="volumeControl" type="range" min="0" max="1" step="0.01"
+                        style="width: 100px; margin-left: 30px;">
+                    <audio id="audio" style="display: none;">
+                        <source src="https://server.streamcasthd.com/8630/stream" type="audio/mpeg">
+                        Tu navegador no soporta la etiqueta de audio.
+                    </audio>
+                <li class="app">Bajate nuestra <a target="_blank"
+                        href="https://play.google.com/store/apps/details?id=laradio.online.radiolatidomusicalok">APP</a>
+                </li>
                 </li>
 
                 <li style="background-color: crimson"><span>Dj: </span>
                     <div id='sonic_dj'></div>
                 </li>
                 <li><span>Oyentes: </span>
-                     <span
-                      class="cc_streaminfo"
-                      data-type="listeners"
-                      data-username="ra02001575"
-                    ></span>
+                    <div id='sonic_listeners'></div>
                 </li>
-                <li style="background-color: #cc4711; opacity: 90%;">Canción: 
-                         <span
-                          class="cc_streaminfo"
-                          data-type="tracktitle"
-                          data-username="ra02001575"
-                        ></span>
+                <li style="background-color: #cc4711; opacity: 90%;">Canción: <div id='sonic_title'></div>
                 </li>
 
             </ul>
@@ -157,8 +161,8 @@
             <!-- Contenido de la segunda columna -->
             <p><span style="color:chocolate;font-style: italic;font-size: 32px;min-width: 500px;">W</span>ebchat</p>
             <span>
-                <iframe width="450px" height="500" scrolling="no"
-                    src="https://chathispano.com/webchat/?theme=embed&style=orange&title=Radio Latido Musical&logo=https://cdn.chathispano.com/news/esquina.jpg&autojoin=true&autoload=false&nick=rlmuser&chan=#Radio-Latido-Musical"></iframe>
+                <iframe width="450px" height="300" scrolling="no"
+                src="https://chathispano.com/webchat/?theme=embed&style=orange&title=Radio Latido Musical&logo=https://cdn.chathispano.com/news/esquina.jpg&autojoin=true&autoload=false&nick=rlmuser&chan=#Radio-Latido-Musical"></iframe>
             </span>
         </div>
         <div class="column" style="font-size: 11px; max-width: 540px;">
@@ -197,7 +201,7 @@
     <!-- Asegúrate de tener esto en tu HTML para cargar Font Awesome -->
 
     <script src="script.js"></script>
-    <script id='sonic_js' data-port='8196' src='https://server.streamcasthd.com/cp/widgets.js?r=688'></script>
+    <script id='sonic_js' data-port='8630' src='https://server.streamcasthd.com/cp/widgets.js?r=297'></script>
     <script>
         var audio = document.getElementById('audio');
         var playButton = document.getElementById('playButton');
@@ -238,7 +242,7 @@
     </script>
     <script>
         function fetchData() {
-            fetch('https://server.streamcasthd.com/cp/get_info.php?p=8196')
+            fetch('https://server.streamcasthd.com/cp/get_info.php?p=8630')
                 .then(response => response.json())
                 .then(data => {
                     var history = data.history;
@@ -287,11 +291,7 @@
             }
         }
     </script>
-     <script
-      language="javascript"
-      type="text/javascript"
-      src="https://radio02.ferozo.com:2199/system/streaminfo.js"
-    ></script>
+
 </body>
 
 </html>
