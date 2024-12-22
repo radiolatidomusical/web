@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Chat</title>
+</head>
+<body>
+    <h1>Welcome to Web Chat</h1>
+
+    <iframe src="" frameborder="0" height="400px" width="450"><div id="phFr2Y67" data-theme="chathispano-green" data-chan="Radio-Latido-Musical" data-autojoin="true"></div></iframe>
+    <script src="https://chathispano.com/assets/webchat/js/embed.min.js"></script>
+</body>
+</html>
